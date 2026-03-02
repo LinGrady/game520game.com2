@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5020869002919663" 
+        crossorigin="anonymous"></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MFFZJMN084"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-MFFZJMN084');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Game520 News Hub</title>
+    <meta name="description" content="Get in touch with Game520 News Hub. We'd love to hear from you.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📰</text></svg>">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">📰</div>
+                <span>Game520</span>
+            </a>
+            
+            <nav>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="blog.html" class="nav-link">Articles</a></li>
+                    <li><a href="about.html" class="nav-link">About Us</a></li>
+                    <li><a href="contact.html" class="nav-link active">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="nav-actions">
+                <button class="search-btn" aria-label="Search">🔍</button>
+                <button class="menu-toggle" id="menuToggle" aria-label="Menu">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="page-header-content">
+            <span class="section-label">Get in Touch</span>
+            <h1 class="page-title">Contact Us</h1>
+            <p class="page-description">Have a question or feedback? We'd love to hear from you.</p>
+        </div>
+    </section>
+
+    <!-- Contact Content -->
+    <section class="content-section">
+        <div class="contact-grid">
+            <div class="contact-info-card">
+                <h2 style="margin-bottom: 1.5rem;">Contact Information</h2>
+                
+                <div class="contact-info-item">
+                    <div class="contact-info-icon">📧</div>
+                    <div>
+                        <div class="contact-info-title">Email</div>
+                        <div class="contact-info-text">contact@game520game.com</div>
+                    </div>
+                </div>
+                
+                <div class="contact-info-item">
+                    <div class="contact-info-icon">📍</div>
+                    <div>
+                        <div class="contact-info-title">Address</div>
+                        <div class="contact-info-text">123 News Street, Digital City, DC 10001</div>
+                    </div>
+                </div>
+                
+                <div class="contact-info-item">
+                    <div class="contact-info-icon">📱</div>
+                    <div>
+                        <div class="contact-info-title">Social Media</div>
+                        <div class="contact-info-text">
+                            <a href="#" style="color: var(--primary-color);">Twitter/X</a> | 
+                            <a href="#" style="color: var(--primary-color);">LinkedIn</a> | 
+                            <a href="#" style="color: var(--primary-color);">Facebook</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-info-item">
+                    <div class="contact-info-icon">⏰</div>
+                    <div>
+                        <div class="contact-info-title">Response Time</div>
+                        <div class="contact-info-text">We typically respond within 24-48 hours</div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border-color);">
+                    <h3 style="margin-bottom: 1rem;">For Press Inquiries</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem;">Journalists and media professionals can reach us directly at <a href="mailto:press@game520game.com" style="color: var(--primary-color);">press@game520game.com</a></p>
+                </div>
+            </div>
+            
+            <div class="contact-form">
+                <h2 style="margin-bottom: 1.5rem;">Send us a Message</h2>
+                <form onsubmit="event.preventDefault(); alert('Thank you for your message! We will get back to you soon.');">
+                    <div class="form-group">
+                        <label class="form-label" for="name">Full Name *</label>
+                        <input type="text" id="name" class="form-input" placeholder="John Doe" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="email">Email Address *</label>
+                        <input type="email" id="email" class="form-input" placeholder="john@example.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="subject">Subject *</label>
+                        <select id="subject" class="form-input" required>
+                            <option value="">Select a subject</option>
+                            <option value="general">General Inquiry</option>
+                            <option value="feedback">Feedback</option>
+                            <option value="tip">News Tip</option>
+                            <option value="advertising">Advertising</option>
+                            <option value="partnership">Partnership</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="message">Message *</label>
+                        <textarea id="message" class="form-textarea" placeholder="Tell us what's on your mind..." required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                            <input type="checkbox" required style="width: auto;">
+                            <span style="font-size: 0.9rem; color: var(--text-secondary);">I agree to the <a href="privacy.html" style="color: var(--primary-color);">Privacy Policy</a> and processing of my personal data.</span>
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message →</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section" style="background: var(--darker-bg);">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">FAQ</span>
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-description">Quick answers to common questions</p>
+            </div>
+            
+            <div class="content-container" style="max-width: 800px;">
+                <h3>How can I submit a news tip?</h3>
+                <p>You can submit news tips through our contact form above by selecting "News Tip" as the subject, or email us directly at contact@game520game.com.</p>
+                
+                <h3>Do you accept guest posts?</h3>
+                <p>Yes, we accept high-quality guest contributions. Please send your pitch through the contact form with "Partnership" as the subject.</p>
+                
+                <h3>How can I advertise on your website?</h3>
+                <p>For advertising inquiries, please select "Advertising" in the contact form subject dropdown, and our team will get back to you with our media kit.</p>
+                
+                <h3>Can I republish your content?</h3>
+                <p>All content on Game520 News Hub is protected by copyright. For republication requests, please contact us with details about your intended use.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <span>📰 Game520 News Hub</span>
+                    </a>
+                    <p class="footer-description">Your trusted source for AI, technology, finance, and legal news.</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link">𝕏</a>
+                        <a href="#" class="social-link">in</a>
+                        <a href="#" class="social-link">f</a>
+                        <a href="#" class="social-link">📡</a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-title">Categories</h4>
+                    <ul class="footer-links">
+                        <li><a href="blog.html?category=ai">AI & Technology</a></li>
+                        <li><a href="blog.html?category=internet">Internet & Digital</a></li>
+                        <li><a href="blog.html?category=legal">Legal & Policy</a></li>
+                        <li><a href="blog.html?category=finance">Finance & Economy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-title">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-title">Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2026 Game520 News Hub. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="privacy.html">Privacy</a>
+                    <a href="terms.html">Terms</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+        menuToggle.addEventListener('click', () => navMenu.classList.toggle('active'));
+        
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            header.classList.toggle('scrolled', window.scrollY > 50);
+        });
+    </script>
+</body>
+</html>
