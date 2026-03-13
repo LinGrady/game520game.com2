@@ -1,0 +1,37 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.game520game.com/sitemap.xml
+
+# Allow all major search engine crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# Disallow crawling of admin or sensitive areas
+Disallow: /admin/
+Disallow: /private/
+Disallow: /tmp/
+
+# Allow crawling of CSS and JS files for better indexing
+Allow: /css/
+Allow: /js/
+Allow: /images/
+
+# Crawl delay (optional - adjust based on server capacity)
+Crawl-delay: 1
