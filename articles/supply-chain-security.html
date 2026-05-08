@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MFFZJMN084"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-MFFZJMN084');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Supply Chain Security Checks That Catch Real Risk | Game520 News Hub</title>
+    <meta name="description" content="Software Supply Chain Security Checks That Catch Real Risk by James Chen for defensive security engineering teams.">
+    <meta name="keywords" content="Security Engineering, supply chain security, software provenance">
+    <meta name="author" content="James Chen">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="header" id="header"><div class="nav-container"><a href="../index.html" class="logo"><div class="logo-icon">G</div><span>Game520</span></a><nav><ul class="nav-menu" id="navMenu"><li><a href="../index.html" class="nav-link">Home</a></li><li><a href="../blog.html" class="nav-link">Articles</a></li><li><a href="../categories.html" class="nav-link">Topics</a></li><li><a href="../authors.html" class="nav-link">Author</a></li><li><a href="../about.html" class="nav-link">About</a></li><li><a href="../contact.html" class="nav-link">Contact</a></li></ul></nav><div class="nav-actions"><button class="search-btn" aria-label="Search">Search</button><button class="menu-toggle" id="menuToggle" aria-label="Open menu">Menu</button></div></div></header>
+    <section class="page-header" style="padding-top: 100px; padding-bottom: 2rem;">
+        <div class="container">
+            <div class="article-header">
+                <span class="article-category">Security Engineering</span>
+                <h1 class="article-header-title">Software Supply Chain Security Checks That Catch Real Risk</h1>
+                <div class="article-meta-grid">
+                    <span>By James Chen</span>
+                    <span>Published May 6, 2026</span>
+                    <span>Updated May 6, 2026</span>
+                    <span>12-16 min read</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="article-featured-image"><img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200&q=80" alt="Software Supply Chain Security Checks That Catch Real Risk"></div>
+    <main class="container" style="padding: 2rem;"><section class="content-section" style="padding-top: 0;"><div class="article-body">
+                <p>Software supply chain security is often discussed as if it were a purchasing problem or a tooling problem. In engineering practice it is a trust management problem. Every package, build step, container image, deployment action, and third-party service carries assumptions about who can change code and how those changes reach production. A mature program does not try to eliminate all dependencies. It makes dependency trust visible, reviewable, and enforceable through controls developers can actually use.</p>
+                <p>The phrase supply chain can sound abstract, but the risk is concrete. A small package can enter a build, a workflow token can publish an artifact, a base image can carry outdated components, or a vendor integration can gain more permissions than the product needs. The defensive work is to define the path from source to runtime, then place checks at the points where trust changes hands.</p>
+                <h2>The security problem</h2>
+                <p>The security problem is that modern software is assembled more than it is written. Teams depend on open source libraries, internal packages, hosted build systems, container registries, infrastructure modules, managed services, and vendor scripts. The risk appears when the organization cannot answer what is included, who can update it, how it was built, where it runs, and what permissions it receives.</p>
+                <p>A supply chain failure often begins as ordinary drift. A project adds a dependency without ownership. A build pipeline keeps a broad credential because nobody wants to break releases. A base image is copied into five repositories and loses its patch cadence. A vendor integration is approved for a pilot and quietly becomes production infrastructure.</p>
+                <h2>Why generic advice fails</h2>
+                <p>Generic advice says to generate a software bill of materials, scan dependencies, sign artifacts, and use trusted repositories. Those practices matter, but they fail when treated as standalone checkboxes. A bill of materials that nobody reviews does not reduce risk. A scanner that produces thousands of findings without ownership becomes background noise. Artifact signing helps only when deployment systems verify the signature and reject unapproved exceptions.</p>
+                <p>Generic advice also misses developer workflow. If the secure path is slower, unclear, or unreliable, teams will route around it under delivery pressure. The solution is to make secure dependency intake and release provenance the easiest path through approved package sources, maintained base images, reusable build templates, and clear exception rules.</p>
+                <h2>The engineering control model</h2>
+                <p>I use a four-layer model. The first layer is dependency intake. New external packages should have a lightweight review based on maintenance activity, license expectations, transitive footprint, criticality, and whether the package runs in sensitive paths. The second layer is build integrity. Build definitions should be versioned, credentials should be scoped, and release artifacts should be produced by controlled pipelines rather than developer laptops.</p>
+                <p>The third layer is artifact control. Images, packages, and deployable bundles should be stored in approved registries with retention, provenance, and promotion rules. Production should deploy artifacts that can be traced back to source revisions and build runs. The fourth layer is runtime permission. Least privilege at runtime reduces the blast radius of dependency mistakes.</p>
+                <h2>Signals worth measuring</h2>
+                <p>Measure the percentage of production artifacts with verified provenance, the age of base images, the number of dependencies introduced without review, and the time from critical advisory to affected service identification. Track broad build credentials, unsigned artifacts, packages downloaded from unapproved sources, and repositories that bypass standard pipeline templates.</p>
+                <p>I also measure exception age and exception concentration. If one business unit owns most exceptions, the issue may be platform fit rather than team behavior. If exceptions never expire, the governance process is approving risk without creating improvement.</p>
+                <h2>Review checklist</h2>
+                <ul style="margin: 1.5rem 0; padding-left: 1.5rem;">
+                    <li style="margin-bottom: 0.75rem;">Map the path from source commit to production runtime and identify every place trust changes hands.</li>
+                    <li style="margin-bottom: 0.75rem;">Require production artifacts to come from controlled pipelines with traceable source revisions and build records.</li>
+                    <li style="margin-bottom: 0.75rem;">Maintain approved base images and package sources so teams have a secure default instead of a policy document.</li>
+                    <li style="margin-bottom: 0.75rem;">Scope build and release credentials to the smallest practical permission set and rotate ownership when teams change.</li>
+                    <li style="margin-bottom: 0.75rem;">Review new dependencies for maintenance health, transitive footprint, runtime context, and business criticality.</li>
+                    <li style="margin-bottom: 0.75rem;">Give exceptions owners, expiration dates, compensating controls, and a visible path back to the standard control.</li>
+                </ul>
+                <h2>Final recommendation</h2>
+                <p>Start by making the software path observable. Know what enters the codebase, how it is built, where artifacts are stored, which systems verify them, and what permissions they receive at runtime. Then prioritize controls that developers experience as paved roads.</p>
+                <p>The aim is not dependency avoidance. The aim is a supply chain where trust is explicit, evidence is available, and risky drift is caught while it is still cheap to fix.</p>
+                <p>A practical program also assigns maintenance work after the review. Each gap should become either a platform improvement, a product-team task, a documented risk decision, or an obsolete requirement that should be removed. This prevents reviews from becoming recurring conversations with no engineering change. The best security organizations treat every review as a chance to reduce future manual effort, clarify ownership, and make the safest path easier for the next team that faces the same decision.</p>
+                <div class="author-summary" style="margin: 2rem 0;">
+                  <h3>Author's note</h3>
+                  <p>James Chen writes about security from an engineering ownership perspective: what teams can design, measure, review, and maintain before risk turns into an incident.</p>
+                </div>
+                <div class="related-reading"><h3>Related reading</h3><ul><li><a href="zero-day-response-playbook.html">A Zero-Day Response Playbook for Engineering Leaders</a></li><li><a href="supply-chain-security.html">Software Supply Chain Security Checks That Catch Real Risk</a></li><li><a href="access-control-review.html">How I Review Access Control Before It Fails an Audit</a></li><li><a href="security-baseline-engineering.html">Building Security Baselines Developers Will Follow</a></li><li><a href="vulnerability-prioritization.html">Vulnerability Prioritization Without Spreadsheet Theater</a></li><li><a href="security-logging-practices.html">Security Logging Practices That Help During Incidents</a></li><li><a href="cloud-reliability-patterns.html">Reliability Patterns I Use Before Adding More Infrastructure</a></li></ul></div>
+                <div class="article-tags"><a href="../blog.html?tag=security-engineering" class="article-tag">Security Engineering</a><a href="../blog.html?tag=incident-response" class="article-tag">Incident Response</a><a href="../blog.html?tag=governance" class="article-tag">Governance</a></div>
+            </div></section></main>
+    <footer class="footer"><div class="footer-container"><div class="footer-grid"><div class="footer-brand"><a href="../index.html" class="footer-logo"><span>Game520 News Hub</span></a><p class="footer-description">Independent news and analysis for technology professionals.</p></div><div class="footer-column"><h4 class="footer-title">Quick Links</h4><ul class="footer-links"><li><a href="../index.html">Home</a></li><li><a href="../blog.html">Articles</a></li><li><a href="../about.html">About Us</a></li><li><a href="../contact.html">Contact</a></li></ul></div><div class="footer-column"><h4 class="footer-title">Legal</h4><ul class="footer-links"><li><a href="../privacy.html">Privacy Policy</a></li><li><a href="../terms.html">Terms of Service</a></li></ul></div></div><div class="footer-bottom"><p class="footer-copyright">© 2026 Game520 News Hub. All rights reserved.</p></div></div></footer>
+    <script>document.getElementById('menuToggle').addEventListener('click', () => document.getElementById('navMenu').classList.toggle('active')); window.addEventListener('scroll', () => document.getElementById('header').classList.toggle('scrolled', window.scrollY > 50));</script>
+</body>
+</html>

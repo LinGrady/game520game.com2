@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5020869002919663" crossorigin="anonymous"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-MFFZJMN084"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -11,255 +10,67 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zero-Day Response Playbook: Lessons from 50 Enterprise Security Incidents | Game520 News Hub</title>
-    <meta name="description" content="Insider insights on handling zero-day vulnerabilities, based on experience coordinating incident response across major enterprises. Practical strategies for containment, assessment, and recovery.">
-    <meta name="keywords" content="zero-day vulnerability, incident response, cybersecurity, security operations">
-    <meta name="author" content="Marcus Rodriguez">
+    <title>A Zero-Day Response Playbook for Engineering Leaders | Game520 News Hub</title>
+    <meta name="description" content="A defensive zero-day response playbook focused on engineering ownership, communication, containment, verification, and measurable recovery.">
+    <meta name="keywords" content="Security Engineering, zero-day response, incident response">
+    <meta name="author" content="James Chen">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📰</text></svg>">
 </head>
 <body>
-    <header class="header" id="header">
-        <div class="nav-container">
-            <a href="../index.html" class="logo"><div class="logo-icon">📰</div><span>Game520</span></a>
-            <nav>
-                <ul class="nav-menu" id="navMenu">
-                    <li><a href="../index.html" class="nav-link">Home</a></li>
-                    <li><a href="../blog.html" class="nav-link">Articles</a></li>
-                    <li><a href="../about.html" class="nav-link">About Us</a></li>
-                    <li><a href="../contact.html" class="nav-link">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="nav-actions">
-                <button class="search-btn">🔍</button>
-                <button class="menu-toggle" id="menuToggle">☰</button>
-            </div>
-        </div>
-    </header>
-
+    <header class="header" id="header"><div class="nav-container"><a href="../index.html" class="logo"><div class="logo-icon">G</div><span>Game520</span></a><nav><ul class="nav-menu" id="navMenu"><li><a href="../index.html" class="nav-link">Home</a></li><li><a href="../blog.html" class="nav-link">Articles</a></li><li><a href="../categories.html" class="nav-link">Topics</a></li><li><a href="../authors.html" class="nav-link">Author</a></li><li><a href="../about.html" class="nav-link">About</a></li><li><a href="../contact.html" class="nav-link">Contact</a></li></ul></nav><div class="nav-actions"><button class="search-btn" aria-label="Search">Search</button><button class="menu-toggle" id="menuToggle" aria-label="Open menu">Menu</button></div></div></header>
     <section class="page-header" style="padding-top: 100px; padding-bottom: 2rem;">
         <div class="container">
             <div class="article-header">
-                <span class="article-category">Security</span>
-                <h1 class="article-header-title">Zero-Day Response Playbook: Lessons from 50 Enterprise Security Incidents</h1>
-                <div class="article-header-meta">
-                    <span>👤 Marcus Rodriguez</span>
-                    <span>📅 March 18, 2026</span>
-                    <span>⏱️ 14 min read</span>
+                <span class="article-category">Security Engineering</span>
+                <h1 class="article-header-title">A Zero-Day Response Playbook for Engineering Leaders</h1>
+                <div class="article-meta-grid">
+                    <span>By James Chen</span>
+                    <span>Published May 6, 2026</span>
+                    <span>Updated May 6, 2026</span>
+                    <span>12-16 min read</span>
                 </div>
             </div>
         </div>
     </section>
-
-    <div class="article-featured-image">
-        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=1200&q=80" alt="Cybersecurity Operations">
-    </div>
-
-    <div class="container" style="padding: 2rem;">
-        <div class="ad-container">
-            <div class="ad-label">Advertisement</div>
-            <div class="ad-placeholder">
-                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5020869002919663" data-ad-slot="YOUR_AD_SLOT" data-ad-format="auto" data-full-width-responsive="true"></ins>
-                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-            </div>
-        </div>
-    </div>
-
-    <section class="content-section" style="padding-top: 0;">
-        <div class="article-body">
-            <p>I've coordinated incident response for over 50 zero-day attacks targeting enterprise networks. What I've learned is that the technical aspects, while challenging, are often not the hardest part. The hardest part is managing the chaos—the decision-making under pressure, the communication with stakeholders who don't speak security, and the political dynamics that emerge when something goes wrong.</p>
-            
-            <p>This article is a distillation of those lessons. I'm not going to cover the basics of incident response frameworks (you can find those anywhere). Instead, I want to share the practical wisdom that only comes from being in the trenches when everything is on fire.</p>
-            
-            <h2>The First 60 Minutes: What Actually Matters</h2>
-            
-            <p>When a zero-day alert hits, everyone feels pressure to act immediately. Here's the truth: acting without thinking in the first hour almost always makes things worse. I've seen organizations shut down their entire email infrastructure based on a false positive, creating more damage than the actual attack would have caused.</p>
-            
-            <p>What you need in that first hour is not action—it's orientation. You need to quickly understand what you're dealing with before committing to a response strategy.</p>
-            
-            <p><strong>First question:</strong> Is this actually malicious or could it be a false positive? I can't tell you how many times an "advanced persistent threat" turned out to be a developer's legitimate scripts uploading code to GitHub.</p>
-            
-            <p><strong>Second question:</strong> If it's real, what's the scope? Single system compromised, or are we looking at lateral movement? This determines your containment strategy.</p>
-            
-            <p><strong>Third question:</strong> What's the blast radius? What data or systems could be impacted? This determines your communication strategy.</p>
-            
-            <p>Get the right people in the room—typically your security lead, someone with network visibility, and someone who can make decisions quickly. Don't expand the call beyond this core group. More people just creates noise.</p>
-            
-            <h2>Containment: Speed vs. Preservation</h2>
-            
-            <p>There's always a tension in zero-day response between containing fast and preserving evidence. Both matter, but you can't optimize for both simultaneously.</p>
-            
-            <p>My approach: establish two parallel tracks immediately. Track one focuses on containment—isolating affected systems, blocking command and control traffic, resetting credentials. Track two focuses on forensics—capturing memory images, preserving logs, documenting the timeline.</p>
-            
-            <p>Here's a specific example. In a 2024 incident, we discovered a healthcare organization had been breached through a vulnerable VPN concentrator. The attacker had moved laterally into the electronic health records system but hadn't yet exfiltrated data.</p>
-            
-            <p>Our initial instinct was to shut down the VPN concentrator immediately. But we realized that would alert the attacker and potentially destroy forensic evidence. Instead, we monitored their movements while quietly preparing containment. When they attempted to access the EHR system at 2 AM, we had everything in place to isolate them without tipping them off that we'd detected their presence.</p>
-            
-            <p>The result: we contained the breach, preserved evidence that led to prosecution, and the organization avoided a mandatory breach notification because we proved no data was exfiltrated.</p>
-            
-            <h2>Building Your Response Infrastructure Before You Need It</h2>
-            
-            <p>The organizations that handle zero-days best are the ones that invested in response infrastructure before the crisis hit. If you're building this from scratch during an incident, you're already behind.</p>
-            
-            <h3>Out-of-Band Communication</h3>
-            
-            <p>When your primary communication systems might be compromised, you need alternatives. This sounds obvious, but I've seen organizations realize during an incident that their backup communication channel also relied on the same compromised infrastructure.</p>
-            
-            <p>What actually works: dedicated Signal or Wickr accounts for the response team, a pre-configured conference bridge that doesn't require corporate credentials, and a documented protocol for how to activate these alternatives.</p>
-            
-            <h3>Pre-positioned Tools</h3>
-            
-            <p>Don't wait until an incident to download your forensics tools. Have memory acquisition utilities, endpoint detection queries, and network analysis tools ready to deploy. During a crisis, you don't want to be fumbling with license keys or waiting for downloads.</p>
-            
-            <p>One practical step: create a "response jump kit"—a set of pre-configured tools on an encrypted USB drive that your incident responders know how to use. Test it quarterly to make sure it still works.</p>
-            
-            <h3>Contact Relationships</h3>
-            
-            <p>This is the one most technical people neglect. You need relationships with your peer organizations' security teams, your law enforcement contacts, and your key vendors' incident response teams <em>before</em> you need them.</p>
-            
-            <p>When you're in the middle of a crisis is not the time to be exchanging first emails with the FBI field office. Those relationships need to exist in normal times. I try to have coffee (virtual or in-person) with my peers at similar organizations quarterly. When something happens, we can pick up the phone and help each other.</p>
-            
-            <h2>Working with Law Enforcement: What You Need to Know</h2>
-            
-            <p>Many organizations are reluctant to involve law enforcement in cyber incidents. I understand the hesitation—there are business concerns about disclosure, legal complexity, and担心政府介入会带来的麻烦. But for serious incidents, law enforcement relationships are invaluable.</p>
-            
-            <p>Here's what I've learned about working with law enforcement effectively:</p>
-            
-            <p><strong>They're not there to help you run your business.</strong> Their job is to investigate crimes and build prosecutable cases. You need to understand their perspective and work within it.</p>
-            
-            <p><strong>Information sharing goes both ways.</strong> If you want intelligence from law enforcement, you need to be willing to share information about your incident. This means getting comfortable with disclosure, even when it's uncomfortable.</p>
-            
-            <p><strong>They can help with things you can't do yourself.</strong> Subpoena power, for example, can reveal attacker infrastructure that would be impossible to discover through technical means alone.</p>
-            
-            <p>In one case, we had an attacker using bulletproof hosting in Eastern Europe that we couldn't technically trace. Law enforcement was able to use diplomatic channels to get information that led to the attacker's identification and eventual arrest.</p>
-            
-            <h2>The Human Element: Managing Stakeholders</h2>
-            
-            <p>Technical incident response is only half the battle. The other half is managing the human side: executives who want simple answers, legal teams worried about liability, communications teams wanting to control the narrative, and employees who are terrified their personal data might be compromised.</p>
-            
-            <h3>Executive Communication</h3>
-            
-            <p>Executives ask two questions: "Are we safe now?" and "What's the impact?" You need to be able to answer both quickly and honestly, without drowning them in technical detail.</p>
-            
-            <p>I use a simple framework: current status (green/yellow/red), what we know, what we're doing about it, and what we don't yet know. Update this at regular intervals (every 2 hours during active incidents), even if there's nothing new to report. Silence is worse than bad news.</p>
-            
-            <h3>Legal Considerations</h3>
-            
-            <p>Get your general counsel involved early, but be prepared to push back on advice that's purely risk-averse. I've seen legal teams recommend no action on incidents that clearly required immediate response because they were worried about liability. Your job is to present the risk tradeoffs clearly so that legal can make informed decisions.</p>
-            
-            <p>One practical point: attorney-client privilege can protect your incident response communications, but only if you're actually communicating with attorneys. Establish this early so your forensics team knows how to document findings.</p>
-            
-            <h3>Employee Communication</h3>
-            
-            <p>Your employees will find out about the incident somehow—assuming they haven't already been impacted. It's far better to communicate with them proactively than to let rumors fill the vacuum.</p>
-            
-            <p>This doesn't mean telling everyone everything. But affected employees need to know what's happening and what they should do. In one incident, we had to reset every employee password. We announced this with 30 minutes notice via Slack, email, and SMS simultaneously. The communication worked because we'd tested the process in advance.</p>
-            
-            <h2>Recovery: Beyond Putting Out Fires</h2>
-            
-            <p>When the immediate crisis is over, the real work begins. Organizations often treat recovery as just rebuilding what was lost. In my experience, this is a missed opportunity.</p>
-            
-            <h3>Root Cause Analysis That Actually Works</h3>
-            
-            <p>Most post-incident reports identify the technical cause of a breach. Few identify why the breach happened in the context of organizational decision-making. Why wasn't the vulnerable system patched? Because the patch broke something else, and the business decided to accept the risk. These systemic factors will produce future incidents unless addressed.</p>
-            
-            <p>I've found the "five whys" technique useful here. Keep asking why until you get to the underlying organizational cause, not just the technical one.</p>
-            
-            <h3>Building Resilience</h3>
-            
-            <p>After each incident, I ask: what would we do differently if this happened again? The answer usually involves detection (we should have caught this sooner), prevention (we should have prevented initial access), and response (we should have responded faster).</p>
-            
-            <p>Turn these into actionable improvements with owners and deadlines. If they stay in a ticketing system as "security improvements," they'll never get done.</p>
-            
-            <h2>What I'd Tell My Past Self</h2>
-            
-            <p>If I could go back and advise my younger self entering this field, here's what I'd say:</p>
-            
-            <p><strong>Don't be the hero.</strong> The instinct in crisis situations is to try to solve everything yourself. Resist this. Build teams, delegate, and trust your people. The incidents where one person tries to do everything are the ones that go badly.</p>
-            
-            <p><strong>Document everything in real-time.</strong> Memory is unreliable, especially under stress. As things happen, assign someone to document the timeline. This will be invaluable for the post-incident report and potentially for legal proceedings.</p>
-            
-            <p><strong>Sleep before the crisis.</strong> This sounds flippant, but exhaustion leads to bad decisions. If you know an incident is coming (and you often do with zero-days that are being actively exploited), sleep ahead of time.</p>
-            
-            <p><strong>Stay humble about what you know.</strong> I've seen brilliant security professionals miss obvious things because they were sure they understood the situation. In incident response, what you don't know will hurt you. Always assume there's something you're missing.</p>
-            
-            <p>Zero-day incidents are inevitable for any organization that matters. The question isn't whether you'll face one—it's whether you'll be ready when it happens. The investments you make now in people, processes, and relationships will determine how that story ends.</p>
-            
-            <div class="article-tags">
-                <a href="../blog.html?tag=cybersecurity" class="article-tag">Cybersecurity</a>
-                <a href="../blog.html?tag=zero-day" class="article-tag">Zero-Day</a>
-                <a href="../blog.html?tag=incident-response" class="article-tag">Incident Response</a>
-                <a href="../blog.html?tag=enterprise" class="article-tag">Enterprise</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="section" style="background: var(--darker-bg);">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Related</span>
-                <h2 class="section-title">More Articles</h2>
-            </div>
-            <div class="articles-grid" style="grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));">
-                <article class="article-card">
-                    <div class="article-image-wrapper">
-                        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&q=80" alt="Cybersecurity" class="article-image">
-                        <span class="article-category">Security</span>
-                    </div>
-                    <div class="article-content">
-                        <h3 class="article-title"><a href="cybersecurity-trends.html">2026 Cybersecurity Trends</a></h3>
-                        <p class="article-excerpt">The evolving threat landscape and what organizations need to prepare for...</p>
-                    </div>
-                </article>
-                <article class="article-card">
-                    <div class="article-image-wrapper">
-                        <img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=600&q=80" alt="Penetration Testing" class="article-image">
-                        <span class="article-category">Security</span>
-                    </div>
-                    <div class="article-content">
-                        <h3 class="article-title"><a href="penetration-test-results.html">Penetration Testing Guide</a></h3>
-                        <p class="article-excerpt">How to conduct effective penetration testing for your organization...</p>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <a href="../index.html" class="footer-logo"><span>📰 Game520 News Hub</span></a>
-                    <p class="footer-description">Independent news and analysis for technology professionals.</p>
+    <div class="article-featured-image"><img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&q=80" alt="A Zero-Day Response Playbook for Engineering Leaders"></div>
+    <main class="container" style="padding: 2rem;"><section class="content-section" style="padding-top: 0;"><div class="article-body">
+                <p>A zero-day response is not a search for a perfect answer. It is a disciplined effort to make the next decision with incomplete information, visible risk, and enough operational control that the organization does not create a second incident while trying to contain the first one. Engineering leaders are often pulled into these events because the vulnerable component touches production ownership, customer commitments, platform dependencies, and release calendars. The useful playbook is therefore not only a security operations checklist. It is an engineering coordination model.</p>
+                <p>I treat a zero-day as an interruption to normal decision rights. The team needs a temporary structure for who can pause deployments, who can approve emergency changes, who can speak for customer impact, who owns evidence preservation, and who decides when recovery is safe. Without that structure, every smart person acts locally and the response becomes fragmented. The goal is to convert anxiety into ordered work: scope, contain, communicate, verify, and learn.</p>
+                <h2>The security problem</h2>
+                <p>The security problem is uncertainty under time pressure. A new vulnerability may affect an internet-facing gateway, a library embedded in dozens of services, a managed product owned by a vendor, or a background component that nobody has touched in years. The organization may know the advisory before it knows the asset inventory. It may know the vulnerable version before it knows whether compensating controls reduce exposure. Leaders are asked for impact statements while the facts are still forming.</p>
+                <p>The practical danger is overreaction or underreaction. Overreaction can remove critical service, destroy useful logs, flood teams with manual work, and distract from the most exposed systems. Underreaction can leave a real exposure open while teams debate severity. The response model has to make uncertainty explicit. Every update should separate confirmed facts, credible assumptions, open questions, and decisions already made.</p>
+                <h2>Why generic advice fails</h2>
+                <p>Generic advice says patch quickly, isolate affected systems, monitor for indicators, and notify stakeholders. Those statements are correct but incomplete. They do not tell a payment team what to do when a patch requires a database driver upgrade, a platform team what to do when a shared container image is affected, or a product leader how to choose between a risky hotfix and a temporary feature shutdown. Real systems have release trains, compliance windows, customer dependencies, and operational constraints.</p>
+                <p>Generic advice also assumes the organization can find affected assets quickly. Many cannot. Asset inventories drift, software bills of materials are incomplete, vendor ownership is unclear, and teams use sidecar components that never appear in a central service catalog. During a zero-day, the inventory gap becomes a response gap.</p>
+                <h2>The engineering control model</h2>
+                <p>My control model has five tracks: exposure mapping, containment design, change execution, evidence and telemetry, and stakeholder communication. Exposure mapping identifies internet-facing systems, privileged internal services, vulnerable packages, vendor dependencies, and data flows that would increase business impact. Containment design defines whether the safest immediate move is patching, configuration change, network restriction, feature disablement, traffic filtering, or enhanced monitoring.</p>
+                <p>Teams should name one incident commander, one technical coordinator, one communications owner, and one documentation owner. The incident commander keeps decisions moving. The technical coordinator connects security findings to service owners. The communications owner makes sure support, legal, customer success, and executives hear the same message. The documentation owner builds the timeline that later becomes the review record.</p>
+                <h2>Signals worth measuring</h2>
+                <p>The first signal is time to asset confidence: how long it takes to produce a trustworthy list of affected and unaffected systems. The second is time to first safe mitigation: not necessarily final patching, but the first control that materially reduces exposure without creating unacceptable operational risk. The third is percentage of affected services with named owners present and reachable. The fourth is change failure rate during emergency response.</p>
+                <p>I also watch the quality of status updates. If updates repeatedly say investigation continues without stating what has been ruled in, ruled out, or decided, the response is probably drifting. Another useful signal is compensating control coverage, because leaders need to know which services have restrictions, authentication barriers, rate limits, runtime protections, or additional monitoring while repair continues.</p>
+                <h2>Review checklist</h2>
+                <ul style="margin: 1.5rem 0; padding-left: 1.5rem;">
+                    <li style="margin-bottom: 0.75rem;">Confirm who has incident command authority and who can approve emergency production changes.</li>
+                    <li style="margin-bottom: 0.75rem;">Identify exposed systems first, then internal systems with sensitive data access or privileged trust relationships.</li>
+                    <li style="margin-bottom: 0.75rem;">Create a shared fact log that separates confirmed evidence from assumptions and unresolved questions.</li>
+                    <li style="margin-bottom: 0.75rem;">Choose mitigations based on business impact, reversibility, and operational safety, not only vendor severity wording.</li>
+                    <li style="margin-bottom: 0.75rem;">Preserve relevant logs, deployment records, access changes, and communication timestamps for the post-incident review.</li>
+                    <li style="margin-bottom: 0.75rem;">Publish a regular situation report for executives and service owners until residual risk returns to an accepted level.</li>
+                </ul>
+                <h2>Final recommendation</h2>
+                <p>Build the zero-day playbook around decision quality. Teams need fast asset answers, reliable owners, safe emergency change paths, and communication habits that survive pressure. Practice the process on high-profile advisories before a crisis forces the issue. Measure the response as an engineering system, not as a theater exercise.</p>
+                <p>If the organization can map exposure quickly, apply reversible controls safely, explain residual risk clearly, and improve afterward, it will handle the next zero-day with much less chaos. The work should be defensive, documented, and grounded in the systems the company actually operates.</p>
+                <p>A practical program also assigns maintenance work after the review. Each gap should become either a platform improvement, a product-team task, a documented risk decision, or an obsolete requirement that should be removed. This prevents reviews from becoming recurring conversations with no engineering change. The best security organizations treat every review as a chance to reduce future manual effort, clarify ownership, and make the safest path easier for the next team that faces the same decision.</p>
+                <div class="author-summary" style="margin: 2rem 0;">
+                  <h3>Author's note</h3>
+                  <p>James Chen writes about security from an engineering ownership perspective: what teams can design, measure, review, and maintain before risk turns into an incident.</p>
                 </div>
-                <div class="footer-column">
-                    <h4 class="footer-title">Quick Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="../index.html">Home</a></li>
-                        <li><a href="../blog.html">Articles</a></li>
-                        <li><a href="../about.html">About Us</a></li>
-                        <li><a href="../contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h4 class="footer-title">Legal</h4>
-                    <ul class="footer-links">
-                        <li><a href="../privacy.html">Privacy Policy</a></li>
-                        <li><a href="../terms.html">Terms of Service</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p class="footer-copyright">© 2026 Game520 News Hub. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        document.getElementById('menuToggle').addEventListener('click', () => document.getElementById('navMenu').classList.toggle('active'));
-        window.addEventListener('scroll', () => document.getElementById('header').classList.toggle('scrolled', window.scrollY > 50));
-    </script>
+                <div class="related-reading"><h3>Related reading</h3><ul><li><a href="zero-day-response-playbook.html">A Zero-Day Response Playbook for Engineering Leaders</a></li><li><a href="supply-chain-security.html">Software Supply Chain Security Checks That Catch Real Risk</a></li><li><a href="access-control-review.html">How I Review Access Control Before It Fails an Audit</a></li><li><a href="security-baseline-engineering.html">Building Security Baselines Developers Will Follow</a></li><li><a href="vulnerability-prioritization.html">Vulnerability Prioritization Without Spreadsheet Theater</a></li><li><a href="security-logging-practices.html">Security Logging Practices That Help During Incidents</a></li><li><a href="cloud-reliability-patterns.html">Reliability Patterns I Use Before Adding More Infrastructure</a></li></ul></div>
+                <div class="article-tags"><a href="../blog.html?tag=security-engineering" class="article-tag">Security Engineering</a><a href="../blog.html?tag=incident-response" class="article-tag">Incident Response</a><a href="../blog.html?tag=zero-day" class="article-tag">Zero-Day Response</a></div>
+            </div></section></main>
+    <footer class="footer"><div class="footer-container"><div class="footer-grid"><div class="footer-brand"><a href="../index.html" class="footer-logo"><span>Game520 News Hub</span></a><p class="footer-description">Independent news and analysis for technology professionals.</p></div><div class="footer-column"><h4 class="footer-title">Quick Links</h4><ul class="footer-links"><li><a href="../index.html">Home</a></li><li><a href="../blog.html">Articles</a></li><li><a href="../about.html">About Us</a></li><li><a href="../contact.html">Contact</a></li></ul></div><div class="footer-column"><h4 class="footer-title">Legal</h4><ul class="footer-links"><li><a href="../privacy.html">Privacy Policy</a></li><li><a href="../terms.html">Terms of Service</a></li></ul></div></div><div class="footer-bottom"><p class="footer-copyright">© 2026 Game520 News Hub. All rights reserved.</p></div></div></footer>
+    <script>document.getElementById('menuToggle').addEventListener('click', () => document.getElementById('navMenu').classList.toggle('active')); window.addEventListener('scroll', () => document.getElementById('header').classList.toggle('scrolled', window.scrollY > 50));</script>
 </body>
 </html>
