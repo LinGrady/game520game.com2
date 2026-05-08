@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MFFZJMN084"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-MFFZJMN084');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How I Review Access Control Before It Fails an Audit | Game520 News Hub</title>
+    <meta name="description" content="How I Review Access Control Before It Fails an Audit by James Chen for defensive security engineering teams.">
+    <meta name="keywords" content="Security Engineering, access control review, identity governance">
+    <meta name="author" content="James Chen">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="header" id="header"><div class="nav-container"><a href="../index.html" class="logo"><div class="logo-icon">G</div><span>Game520</span></a><nav><ul class="nav-menu" id="navMenu"><li><a href="../index.html" class="nav-link">Home</a></li><li><a href="../blog.html" class="nav-link">Articles</a></li><li><a href="../categories.html" class="nav-link">Topics</a></li><li><a href="../authors.html" class="nav-link">Author</a></li><li><a href="../about.html" class="nav-link">About</a></li><li><a href="../contact.html" class="nav-link">Contact</a></li></ul></nav><div class="nav-actions"><button class="search-btn" aria-label="Search">Search</button><button class="menu-toggle" id="menuToggle" aria-label="Open menu">Menu</button></div></div></header>
+    <section class="page-header" style="padding-top: 100px; padding-bottom: 2rem;">
+        <div class="container">
+            <div class="article-header">
+                <span class="article-category">Security Engineering</span>
+                <h1 class="article-header-title">How I Review Access Control Before It Fails an Audit</h1>
+                <div class="article-meta-grid">
+                    <span>By James Chen</span>
+                    <span>Published May 6, 2026</span>
+                    <span>Updated May 6, 2026</span>
+                    <span>12-16 min read</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="article-featured-image"><img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1200&q=80" alt="How I Review Access Control Before It Fails an Audit"></div>
+    <main class="container" style="padding: 2rem;"><section class="content-section" style="padding-top: 0;"><div class="article-body">
+                <p>Access control reviews become painful when they are treated as calendar ceremonies instead of engineering feedback loops. A quarterly spreadsheet can prove that someone looked at permissions, but it rarely proves that permissions still match how the system is built and operated. The review that matters finds stale ownership, excessive privilege, confusing roles, emergency access without expiry, and workflows that encourage teams to request more access than they need.</p>
+                <p>I review access control from the perspective of failure. If an auditor, incident responder, or new service owner asked why a person, service account, group, or integration has access, could the team answer with evidence? If not, the organization is relying on memory. Memory is not an access control system.</p>
+                <h2>The security problem</h2>
+                <p>The security problem is permission drift. People change roles, contractors leave, services are retired, vendors finish projects, and temporary access becomes permanent because removing it feels risky. Systems also evolve. A role created for a small internal tool may eventually control customer data, production configuration, or deployment authority.</p>
+                <p>Another problem is role ambiguity. Names like admin, power user, maintainer, operator, and support can mean different things across platforms. A good review translates role names into capabilities: read customer data, modify production configuration, deploy code, manage secrets, approve payments, or export reports.</p>
+                <h2>Why generic advice fails</h2>
+                <p>Generic advice says to apply least privilege and review access regularly. That is easy to say and hard to operate. Least privilege fails when requesting narrow access takes days but broad access takes minutes. Reviews fail when approvers receive long lists of names without context, usage signals, role definitions, or business owners.</p>
+                <p>Generic advice also ignores machine access. Service accounts, deployment tokens, automation users, and vendor integrations often create more practical risk than individual accounts. They may be excluded from human access reviews because nobody owns them personally. A mature review includes non-human identities and treats them as engineered components.</p>
+                <h2>The engineering control model</h2>
+                <p>My control model starts with entitlement inventory. For each sensitive system, list the roles, groups, service accounts, tokens, and integrations that can read sensitive data, change production state, manage identity, or alter audit evidence. Then map each entitlement to an owner and a capability description.</p>
+                <p>Next, connect access to workflow. How is access requested, approved, granted, logged, modified, and removed? Where are break-glass paths? Which permissions are time-bound? Which permissions are inherited through nested groups? Evidence-based recertification should show last use, recent activity, role capability, business justification, and expiration.</p>
+                <h2>Signals worth measuring</h2>
+                <p>Measure orphaned accounts, dormant privileged access, temporary access past expiration, service accounts without owners, direct user grants outside approved groups, and permissions changed outside the normal request path. Track how many review decisions are rubber-stamped, how many removals occur, and how many questions approvers ask.</p>
+                <p>I also watch the delay between role change and permission change. Human resources events, team membership changes, repository ownership changes, and production support rotations should trigger access reevaluation. Access control is strongest when it is connected to operational reality rather than audit season.</p>
+                <h2>Review checklist</h2>
+                <ul style="margin: 1.5rem 0; padding-left: 1.5rem;">
+                    <li style="margin-bottom: 0.75rem;">Translate every sensitive role into concrete capabilities that an approver can understand.</li>
+                    <li style="margin-bottom: 0.75rem;">Include service accounts, deployment tokens, vendor integrations, and automation users in the same review discipline as people.</li>
+                    <li style="margin-bottom: 0.75rem;">Show last use, owner, business justification, request history, and expiration date for high-risk access.</li>
+                    <li style="margin-bottom: 0.75rem;">Remove direct grants where group-based or policy-based access can express ownership more clearly.</li>
+                    <li style="margin-bottom: 0.75rem;">Review break-glass access separately and verify that emergency use is logged, time-bound, and reconciled.</li>
+                    <li style="margin-bottom: 0.75rem;">Trigger access review on role changes, vendor offboarding, system ownership transfer, and support rotation changes.</li>
+                </ul>
+                <h2>Final recommendation</h2>
+                <p>Review access control as an engineering system. Define capabilities, assign owners, collect usage evidence, include machine identities, and connect permission changes to workflow events. The goal is not to create a perfect quarterly artifact.</p>
+                <p>The goal is to make every sensitive permission explainable before an auditor or incident responder asks. When access is understandable, time-bound, and owned, audits become easier and incidents have smaller blast radius.</p>
+                <p>A practical program also assigns maintenance work after the review. Each gap should become either a platform improvement, a product-team task, a documented risk decision, or an obsolete requirement that should be removed. This prevents reviews from becoming recurring conversations with no engineering change. The best security organizations treat every review as a chance to reduce future manual effort, clarify ownership, and make the safest path easier for the next team that faces the same decision. It also gives auditors a clearer story because the evidence shows continuing care, not a last-minute scramble.</p>
+                <div class="author-summary" style="margin: 2rem 0;">
+                  <h3>Author's note</h3>
+                  <p>James Chen writes about security from an engineering ownership perspective: what teams can design, measure, review, and maintain before risk turns into an incident.</p>
+                </div>
+                <div class="related-reading"><h3>Related reading</h3><ul><li><a href="zero-day-response-playbook.html">A Zero-Day Response Playbook for Engineering Leaders</a></li><li><a href="supply-chain-security.html">Software Supply Chain Security Checks That Catch Real Risk</a></li><li><a href="access-control-review.html">How I Review Access Control Before It Fails an Audit</a></li><li><a href="security-baseline-engineering.html">Building Security Baselines Developers Will Follow</a></li><li><a href="vulnerability-prioritization.html">Vulnerability Prioritization Without Spreadsheet Theater</a></li><li><a href="security-logging-practices.html">Security Logging Practices That Help During Incidents</a></li><li><a href="cloud-reliability-patterns.html">Reliability Patterns I Use Before Adding More Infrastructure</a></li></ul></div>
+                <div class="article-tags"><a href="../blog.html?tag=security-engineering" class="article-tag">Security Engineering</a><a href="../blog.html?tag=incident-response" class="article-tag">Incident Response</a><a href="../blog.html?tag=governance" class="article-tag">Governance</a></div>
+            </div></section></main>
+    <footer class="footer"><div class="footer-container"><div class="footer-grid"><div class="footer-brand"><a href="../index.html" class="footer-logo"><span>Game520 News Hub</span></a><p class="footer-description">Independent news and analysis for technology professionals.</p></div><div class="footer-column"><h4 class="footer-title">Quick Links</h4><ul class="footer-links"><li><a href="../index.html">Home</a></li><li><a href="../blog.html">Articles</a></li><li><a href="../about.html">About Us</a></li><li><a href="../contact.html">Contact</a></li></ul></div><div class="footer-column"><h4 class="footer-title">Legal</h4><ul class="footer-links"><li><a href="../privacy.html">Privacy Policy</a></li><li><a href="../terms.html">Terms of Service</a></li></ul></div></div><div class="footer-bottom"><p class="footer-copyright">© 2026 Game520 News Hub. All rights reserved.</p></div></div></footer>
+    <script>document.getElementById('menuToggle').addEventListener('click', () => document.getElementById('navMenu').classList.toggle('active')); window.addEventListener('scroll', () => document.getElementById('header').classList.toggle('scrolled', window.scrollY > 50));</script>
+</body>
+</html>
