@@ -11,235 +11,101 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>How We Reduced Our Cloud Costs by 40%: A Detailed Case Study | Game520 News Hub</title>
-    <meta name="description" content="A detailed breakdown of our cloud optimization journey. We share the exact steps we took, the tools we used, and the mistakes we made along the way. Includes actual cost savings data and implementation timeline.">
-    <meta name="keywords" content="cloud cost optimization, AWS cost reduction, cloud computing savings, infrastructure optimization, cost management">
+    <title>Cloud Cost Optimization Starts With Architecture, Not Discounts | Game520 News Hub</title>
+    <meta name="description" content="James Chen explains why durable cloud cost optimization begins with architecture, workload design, ownership, and operational signals rather than discount programs.">
+    <meta name="keywords" content="Cloud Architecture, cloud cost optimization, FinOps, platform engineering, cloud reliability">
+    <meta name="author" content="James Chen">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📰</text></svg>">
 </head>
 <body>
     <header class="header" id="header">
         <div class="nav-container">
-            <a href="../index.html" class="logo"><div class="logo-icon">📰</div><span>Game520</span></a>
+            <a href="../index.html" class="logo"><div class="logo-icon">G</div><span>Game520</span></a>
             <nav>
                 <ul class="nav-menu" id="navMenu">
                     <li><a href="../index.html" class="nav-link">Home</a></li>
                     <li><a href="../blog.html" class="nav-link">Articles</a></li>
-                    <li><a href="../categories.html" class="nav-link">Categories</a></li>
-                    <li><a href="../authors.html" class="nav-link">Authors</a></li>
-                    <li><a href="../about.html" class="nav-link">About Us</a></li>
+                    <li><a href="../categories.html" class="nav-link">Topics</a></li>
+                    <li><a href="../authors.html" class="nav-link">Author</a></li>
+                    <li><a href="../about.html" class="nav-link">About</a></li>
                     <li><a href="../contact.html" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
             <div class="nav-actions">
-                <button class="search-btn">🔍</button>
-                <button class="menu-toggle" id="menuToggle">☰</button>
+                <button class="search-btn" aria-label="Search">Search</button>
+                <button class="menu-toggle" id="menuToggle" aria-label="Open menu">Menu</button>
             </div>
         </div>
     </header>
-
     <section class="page-header" style="padding-top: 100px; padding-bottom: 2rem;">
         <div class="container">
             <div class="article-header">
-                <span class="article-category" style="background: linear-gradient(135deg, #10b981, #059669);">Case Study</span>
-                <h1 class="article-header-title">How We Reduced Our Cloud Costs by 40%: A Detailed Case Study</h1>
-                <div class="article-header-meta">
-                    <span>👤 Michael Thompson</span>
-                    <span>📅 March 18, 2026</span>
-                    <span>⏱️ 15 min read</span>
+                <span class="article-category">Cloud Architecture</span>
+                <h1 class="article-header-title">Cloud Cost Optimization Starts With Architecture, Not Discounts</h1>
+                <div class="article-meta-grid">
+                    <span>By James Chen</span>
+                    <span>Published May 6, 2026</span>
+                    <span>Updated May 6, 2026</span>
+                    <span>12-16 min read</span>
                 </div>
             </div>
         </div>
     </section>
-
-    <div class="article-featured-image">
-        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&q=80" alt="Cloud Computing">
-    </div>
-
-    <div class="container" style="padding: 2rem;">
-        <div class="ad-container">
-            <div class="ad-label">Advertisement</div>
-            <div class="ad-placeholder">
-                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5020869002919663" data-ad-slot="YOUR_AD_SLOT" data-ad-format="auto" data-full-width-responsive="true"></ins>
-                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-            </div>
-        </div>
-    </div>
-
-    <section class="content-section" style="padding-top: 0;">
-        <div class="article-body">
-            <p>Six months ago, our monthly AWS bill was $47,000. Today, it's $28,200. That's a 40% reduction that saved us $225,600 annually—all without reducing functionality or performance. In this article, I'll share exactly how we did it, including the mistakes we made and the tools that actually helped.</p>
-            
-            <div style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 1.5rem; margin: 2rem 0;">
-                <h4 style="margin-bottom: 1rem; color: var(--text-primary);">📊 Our Cost Reduction Journey</h4>
-                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; text-align: center;">
-                    <div>
-                        <div style="font-size: 1.5rem; font-weight: 700; color: #ef4444;">$47,000</div>
-                        <div style="font-size: 0.875rem; color: var(--text-secondary);">Monthly Bill (Before)</div>
-                    </div>
-                    <div>
-                        <div style="font-size: 1.5rem; font-weight: 700; color: #10b981;">$28,200</div>
-                        <div style="font-size: 0.875rem; color: var(--text-secondary);">Monthly Bill (After)</div>
-                    </div>
-                    <div>
-                        <div style="font-size: 1.5rem; font-weight: 700; color: #3b82f6;">$18,800</div>
-                        <div style="font-size: 0.875rem; color: var(--text-secondary);">Monthly Savings</div>
-                    </div>
+    <div class="article-featured-image"><img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&q=80" alt="Cloud Cost Optimization Starts With Architecture, Not Discounts"></div>
+    <main class="container" style="padding: 2rem;">
+        <section class="content-section" style="padding-top: 0;">
+            <div class="article-body">
+                <p>Cloud cost optimization usually arrives as a finance escalation, but the useful work starts much earlier. By the time a team is comparing discount plans, negotiating committed spend, or deleting idle resources under pressure, the architecture has already made most of the economic decisions. The bill is a delayed report of choices about data movement, tenancy, availability targets, storage classes, deployment habits, and ownership boundaries.</p>
+                <p>My practical rule is simple: discounts make a healthy architecture cheaper, but they rarely make an unhealthy architecture healthy. A system that duplicates data without a retention policy, scales every service for peak traffic, keeps verbose logs forever, and treats every environment as production will consume any savings plan eventually. The work is not to shame teams for spending money. The work is to make cost a visible engineering signal before it becomes an executive surprise.</p>
+                <h2>The architecture problem</h2>
+                <p>The architecture problem is that cloud resources feel variable while design choices become fixed. A team chooses synchronous service calls because they are easy to reason about during the first release. Months later, every user request crosses regions, fans out to six services, writes large traces, and waits on a database that was never partitioned around the product access patterns. The invoice says compute, network, database, and observability, but the root cause is the shape of the system.</p>
+                <p>Cost also hides inside shared abstractions. A platform team may offer a default cluster, managed database template, central logging pipeline, and storage module. Those defaults accelerate delivery, but they also encode spending behavior. If the default service requests too much memory, if every log line is indexed, or if every feature receives its own isolated database, hundreds of small teams can multiply a bad assumption.</p>
+                <p>I begin a cost review by drawing the operational path of a common transaction. Which services run continuously? Which resources scale with users? Which resources scale with data volume? Which resources scale with engineer activity? Which network boundaries are crossed? Which artifacts are retained after the request completes? This diagram usually explains more than the invoice because it shows why the invoice exists.</p>
+                <h2>The cost of the obvious solution</h2>
+                <p>The obvious solution is to buy discounts, right-size instances, turn off unused environments, and ask teams to reduce waste. Those actions are useful, but they are reactive. They reduce the current bill without necessarily changing the next architecture decision. If the organization only celebrates monthly savings, teams learn to optimize after the fact. They do not learn to design workloads with cost behavior in mind.</p>
+                <p>Another obvious solution is central approval. Every new database, queue, cluster, or region requires review from a cost team. This can stop truly reckless choices, but it creates friction and pushes teams toward workarounds. Governance that only says no is not architecture leadership. Engineers need cost-aware paved paths, not a permission maze that appears only after a product plan exists.</p>
+                <p>The more subtle cost is reliability risk. Aggressive savings programs can remove redundancy, shrink buffers, and reduce observability just when the system needs them most. I have seen teams cut replica counts before understanding traffic bursts, reduce log retention before incident reviews were mature, and move batch work to interruptible capacity without designing checkpointing. Savings that increase operational fragility are debt, not efficiency.</p>
+                <h2>The trade-off model</h2>
+                <p>I use a four-part model: workload shape, failure tolerance, ownership maturity, and reversibility. Workload shape asks whether demand is steady, bursty, seasonal, or event driven. Steady workloads may justify committed capacity. Bursty workloads usually need autoscaling, queues, and backpressure. Data-heavy workloads need special attention to transfer boundaries and storage lifecycle. Without this classification, optimization becomes a list of vendor features rather than a design conversation.</p>
+                <p>Failure tolerance asks what happens when capacity is reduced or delayed. A customer checkout path, a nightly analytics job, a training pipeline, and an internal dashboard should not share the same cost posture. Some workloads need reserved headroom because failure is visible and expensive. Others can wait, degrade, sample, or retry. The cheapest architecture is not the one that spends the least; it is the one that spends intentionally according to business consequence.</p>
+                <p>Ownership maturity asks whether the team can operate the optimization it chooses. Autoscaling is not free if nobody understands scaling signals. Interruptible capacity is dangerous if the application cannot tolerate interruption. Multi-tenant databases save money only when noisy-neighbor controls exist. Reversibility asks how hard it is to undo the choice. A storage lifecycle policy can often be adjusted. A cross-region data dependency baked into product behavior may take quarters to unwind.</p>
+                <h2>Operational signals to watch</h2>
+                <p>The first signal is unit cost by business action. Cost per signup, cost per report, cost per upload, cost per search, or cost per tenant tells a better story than total monthly spend. Total spend can rise because the business is growing. Unit cost reveals whether the architecture is becoming more efficient or less efficient as usage scales.</p>
+                <p>The second signal is idle capacity by ownership boundary. Do not only show idle compute globally. Show it by team, service, environment, and deployment version. Engineers can fix what they recognize. A central chart labeled miscellaneous waste invites arguments about allocation. A chart that says one staging cluster has run at two percent CPU for six weeks invites action.</p>
+                <p>The third signal is data movement. Cross-zone, cross-region, and internet egress often expose design choices that were never reviewed. Watch for chatty service boundaries, analytics exports that copy entire tables, object downloads bypassing a cache, and replication patterns that keep data fresh where nobody reads it. Data movement is frequently both a cost and reliability smell.</p>
+                <h2>Checklist for engineering leaders</h2>
+                <ul style="margin: 1.5rem 0; padding-left: 1.5rem;">
+                    <li style="margin-bottom: 0.75rem;">Define cost per meaningful product action and review it alongside latency, error rate, and adoption.</li>
+                    <li style="margin-bottom: 0.75rem;">Create architecture templates with explicit cost assumptions, not just secure defaults.</li>
+                    <li style="margin-bottom: 0.75rem;">Separate steady, bursty, interruptible, and mission-critical workloads before choosing purchasing models.</li>
+                    <li style="margin-bottom: 0.75rem;">Make every shared platform default visible, versioned, and periodically challenged with real utilization data.</li>
+                    <li style="margin-bottom: 0.75rem;">Require rollback plans for savings changes that affect capacity, retention, redundancy, or observability.</li>
+                    <li style="margin-bottom: 0.75rem;">Give teams dashboards that connect their design choices to spend without forcing them to become billing specialists.</li>
+                </ul>
+                <p>Leaders should also protect time for architectural cleanup. Many cost problems are not fixed by toggling a setting. They require moving a cache closer to users, changing an API contract, partitioning data differently, or reducing unnecessary fan-out. If the roadmap never funds that work, the organization is choosing future spend while pretending the bill is accidental.</p>
+                <h2>Final recommendation</h2>
+                <p>Start with architecture, then negotiate discounts. Build a cost model for the system common transactions, map the resources behind those transactions, and identify which costs grow with users, data, tenants, regions, and engineer activity. Once that model exists, purchasing decisions become easier because the organization knows which demand is stable and which demand should remain flexible.</p>
+                <p>My final recommendation is to make cost a normal design review topic, not a quarterly panic. Ask teams to state the cost behavior of new systems the same way they state reliability targets. Give them platform defaults that are efficient by design, not merely easy to provision. Then use discounts as the last mile of optimization. That order preserves engineering judgment and produces savings that survive the next product launch.</p>
+                <div class="author-summary" style="margin: 2rem 0;">
+                  <h3>Author's note</h3>
+                  <p>James Chen writes from the perspective of a software architect evaluating cloud systems by their operating cost, reliability behavior, team ownership model, and long-term maintainability.</p>
                 </div>
-            </div>
-            
-            <h2>Where Our Money Was Going</h2>
-            <p>Before we could optimize, we needed to understand our spending. Here's what our AWS bill looked like before we started:</p>
-            
-            <ul style="margin: 1.5rem 0; padding-left: 1.5rem;">
-                <li style="margin-bottom: 0.75rem;"><strong>EC2 Instances:</strong> 42% - We were running 15 production servers plus 8 staging environments 24/7</li>
-                <li style="margin-bottom: 0.75rem;"><strong>RDS (Database):</strong> 23% - Three production databases running on db.r5.4xlarge instances</li>
-                <li style="margin-bottom: 0.75rem;"><strong>S3 Storage:</strong> 12% - Approximately 50TB of data storage and transfers</li>
-                <li style="margin-bottom: 0.75rem;"><strong>Data Transfer:</strong> 8% - Outbound data transfer costs were bleeding us dry</li>
-                <li style="margin-bottom: 0.75rem;"><strong>Other Services:</strong> 15% - CloudFront, Route 53, Lambda, etc.</li>
-            </ul>
-            
-            <h2>Step 1: Right-Sizing Our EC2 Instances</h2>
-            <p>The biggest win came from right-sizing our EC2 instances. We were running instances that were far more powerful than what our workloads actually needed.</p>
-            
-            <p>We used AWS Compute Optimizer to analyze our instance utilization over a 2-week period. The results were embarrassing—we were using on average only 15-20% of our CPU capacity and 25% of our memory.</p>
-            
-            <h3>What We Changed</h3>
-            <ul style="margin: 1.5rem 0; padding-left: 1.5rem;">
-                <li style="margin-bottom: 0.75rem;">Moved 8 of our 15 production servers from m5.4xlarge to m5.xlarge (saved $3,200/month)</li>
-                <li style="margin-bottom: 0.75rem;">Implemented auto-scaling for non-production environments (saved $2,100/month)</li>
-                <li style="margin-bottom: 0.75rem;">Reserved Instances for our baseline 10 production servers (saved $1,800/month)</li>
-            </ul>
-            
-            <h3>Lessons Learned</h3>
-            <p>Right-sizing isn't a one-time task. CPU and memory usage patterns change as your application grows. We now review our instance sizes monthly using AWS Cost Explorer's rightsizing recommendations.</p>
-            
-            <h2>Step 2: Database Optimization</h2>
-            <p>Our RDS costs were out of control. We had three production databases running on over-provisioned instances, and we weren't taking advantage of many AWS RDS features.</p>
-            
-            <h3>What We Changed</h3>
-            <ul style="margin: 1.5rem 0; padding-left: 1.5rem;">
-                <li style="margin-bottom: 0.75rem;">Downgraded our primary read database from db.r5.4xlarge to db.r5.2xlarge (saved $1,400/month)</li>
-                <li style="margin-bottom: 0.75rem;">Implemented Read Replicas for our reporting workloads instead of running separate databases</li>
-                <li style="margin-bottom: 0.75rem;">Enabled Aurora Serverless for our dev/test environments (saved $900/month)</li>
-                <li style="margin-bottom: 0.75rem;">Reserved Instances for our production databases (saved $1,100/month)</li>
-            </ul>
-            
-            <h2>Step 3: S3 and Data Transfer Optimization</h2>
-            <p>We were storing everything in S3 with default settings, and our data transfer costs were killing us.</p>
-            
-            <h3>What We Changed</h3>
-            <ul style="margin: 1.5rem 0; padding-left: 1.5rem;">
-                <li style="margin-bottom: 0.75rem;">Implemented S3 Intelligent-Tiering for objects with unpredictable access patterns (saved $1,100/month)</li>
-                <li style="margin-bottom: 0.75rem;">Enabled S3 Transfer Acceleration for our file uploads</li>
-                <li style="margin-bottom: 0.75rem;">Moved static assets to CloudFront with proper caching (reduced data transfer by 60%)</li>
-                <li style="margin-bottom: 0.75rem;">Compressed all log files before storing them in S3 (reduced storage by 40%)</li>
-            </ul>
-            
-            <h2>The Mistakes We Made</h2>
-            <p>Not everything went smoothly. Here are the costly mistakes we made along the way:</p>
-            
-            <h3>Mistake 1: Going Too Aggressive on Savings</h3>
-            <p>In our enthusiasm to cut costs, we downsized one of our database instances too much. Within a week, we started experiencing performance issues during peak hours. We had to revert the change and wait for a less busy period to optimize properly.</p>
-            
-            <h3>Mistake 2: Ignoring Dev Environments</h3>
-            <p>We initially focused only on production costs. But our dev and staging environments were running 24/7, costing us $4,500/month. We implemented auto-scaling and scheduled scaling to only run these environments during working hours.</p>
-            
-            <h3>Mistake 3: Not Using Reserved Instances Properly</h3>
-            <p>We bought Reserved Instances for the wrong instance types and had to sell them at a loss on the AWS Reserved Instance Marketplace. Now we analyze our usage patterns for at least 3 months before committing to reserved capacity.</p>
-            
-            <h2>Tools That Helped Us</h2>
-            <ul style="margin: 1.5rem 0; padding-left: 1.5rem;">
-                <li style="margin-bottom: 0.75rem;"><strong>AWS Cost Explorer:</strong> Essential for understanding where your money is going</li>
-                <li style="margin-bottom: 0.75rem;"><strong>AWS Compute Optimizer:</strong> Provides right-sizing recommendations based on actual usage</li>
-                <li style="margin-bottom: 0.75rem;"><strong>AWS Budgets:</strong> Set alerts when costs exceed thresholds</li>
-                <li style="margin-bottom: 0.75rem;"><strong>CloudHealth (now VMware Aria):</strong> Third-party tool for more detailed analysis</li>
-                <li style="margin-bottom: 0.75rem;"><strong>Dashbird:</strong> Serverless monitoring that helped us optimize Lambda costs</li>
-            </ul>
-            
-            <h2>Key Takeaways</h2>
-            <ol style="margin: 1.5rem 0; padding-left: 1.5rem;">
-                <li style="margin-bottom: 1rem;"><strong>Start with visibility:</strong> You can't optimize what you can't measure. Make sure you have detailed cost allocation tags set up from day one.</li>
-                <li style="margin-bottom: 1rem;"><strong>Right-size first:</strong> Most companies are over-provisioned. Use AWS tools to identify undersized resources.</li>
-                <li style="margin-bottom: 1rem;"><strong>Automate non-production:</strong> Dev and staging environments don't need to run 24/7. Use scheduled scaling.</li>
-                <li style="margin-bottom: 1rem;"><strong>Commit gradually:</strong> Only buy Reserved Instances for stable, predictable workloads.</li>
-                <li style="margin-bottom: 1rem;"><strong>Make it ongoing:</strong> Cloud optimization isn't a one-time project. Review monthly.</li>
-            </ol>
-            
-            <h2>What's Next</h2>
-            <p>We've now turned our attention to further optimization. Our next targets are:</p>
-            <ul style="margin: 1.5rem 0; padding-left: 1.5rem;">
-                <li style="margin-bottom: 0.75rem;">Moving some batch processing workloads to Spot Instances (potential savings: $1,500/month)</li>
-                <li style="margin-bottom: 0.75rem;">Implementing a multi-account strategy to isolate costs better</li>
-                <li style="margin-bottom: 0.75rem;">Exploring Kubernetes cost optimization with Karpenter</li>
-            </ul>
-            
-            <div class="article-tags">
-                <a href="../blog.html?tag=cloud" class="article-tag">Cloud Computing</a>
-                <a href="../blog.html?tag=cost-optimization" class="article-tag">Cost Optimization</a>
-                <a href="../blog.html?tag=aws" class="article-tag">AWS</a>
-                <a href="../blog.html?tag=case-study" class="article-tag">Case Study</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="section" style="background: var(--darker-bg);">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Related</span>
-                <h2 class="section-title">More Case Studies</h2>
-            </div>
-            <div class="articles-grid" style="grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));">
-                <article class="article-card">
-                    <div class="article-image-wrapper">
-                        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&q=80" alt="AI Productivity" class="article-image">
-                        <span class="article-category">Implementation Guide</span>
-                    </div>
-                    <div class="article-content">
-                        <h3 class="article-title"><a href="ai-productivity.html">AI Productivity Tools: Real Results</a></h3>
-                        <p class="article-excerpt">After testing 30+ AI tools, here are the ones that actually saved us time...</p>
-                    </div>
-                </article>
-                <article class="article-card">
-                    <div class="article-image-wrapper">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80" alt="Digital Transformation" class="article-image">
-                        <span class="article-category">Business</span>
-                    </div>
-                    <div class="article-content">
-                        <h3 class="article-title"><a href="digital-transformation.html">Digital Transformation Lessons</a></h3>
-                        <p class="article-excerpt">What we learned from our digital transformation journey...</p>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <a href="../index.html" class="footer-logo"><span>📰 Game520 News Hub</span></a>
-                    <p class="footer-description">Your trusted source for news.</p>
-                </div>
-                <div class="footer-column">
-                    <h4 class="footer-title">Legal</h4>
-                    <ul class="footer-links">
-                        <li><a href="../privacy.html">Privacy Policy</a></li>
-                        <li><a href="../terms.html">Terms of Service</a></li>
+                <div class="related-reading">
+                    <h3>Related reading</h3>
+                    <ul>
+                        <li><a href="cloud-reliability-patterns.html">Reliability Patterns I Use Before Adding More Infrastructure</a></li>
+                        <li><a href="observability-stack-design.html">Designing Observability That Engineers Actually Use</a></li>
+                        <li><a href="platform-engineering-lessons.html">Platform Engineering Lessons From Internal Tooling Work</a></li>
+                        <li><a href="developer-metrics.html">Developer Productivity Metrics That Do Not Punish Developers</a></li>
                     </ul>
                 </div>
+                <div class="article-tags"><a href="../blog.html?tag=cloud-architecture" class="article-tag">Cloud Architecture</a><a href="../blog.html?tag=finops" class="article-tag">FinOps</a><a href="../blog.html?tag=operations" class="article-tag">Operations</a></div>
             </div>
-            <div class="footer-bottom">
-                <p class="footer-copyright">© 2026 Game520 News Hub. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        document.getElementById('menuToggle').addEventListener('click', () => document.getElementById('navMenu').classList.toggle('active'));
-        window.addEventListener('scroll', () => document.getElementById('header').classList.toggle('scrolled', window.scrollY > 50));
-    </script>
+        </section>
+    </main>
+    <footer class="footer"><div class="footer-container"><div class="footer-grid"><div class="footer-brand"><a href="../index.html" class="footer-logo"><span>Game520 News Hub</span></a><p class="footer-description">Independent news and analysis for technology professionals.</p></div><div class="footer-column"><h4 class="footer-title">Quick Links</h4><ul class="footer-links"><li><a href="../index.html">Home</a></li><li><a href="../blog.html">Articles</a></li><li><a href="../about.html">About Us</a></li><li><a href="../contact.html">Contact</a></li></ul></div><div class="footer-column"><h4 class="footer-title">Legal</h4><ul class="footer-links"><li><a href="../privacy.html">Privacy Policy</a></li><li><a href="../terms.html">Terms of Service</a></li></ul></div></div><div class="footer-bottom"><p class="footer-copyright">© 2026 Game520 News Hub. All rights reserved.</p></div></div></footer>
+    <script>document.getElementById('menuToggle').addEventListener('click', () => document.getElementById('navMenu').classList.toggle('active')); window.addEventListener('scroll', () => document.getElementById('header').classList.toggle('scrolled', window.scrollY > 50));</script>
 </body>
 </html>
