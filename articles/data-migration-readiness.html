@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Data Migration Readiness: Questions to Answer Before Moving Records | Game520 News Hub</title><meta name="description" content="A practical data migration readiness guide for engineering teams moving records, schemas, storage systems, or customer data."><meta name="author" content="James Chen"><link rel="stylesheet" href="../css/style.css"></head>
+<body><header class="header" id="header"><div class="nav-container"><a href="../index.html" class="logo"><div class="logo-icon">G</div><span>Game520</span></a><nav><ul class="nav-menu" id="navMenu"><li><a href="../index.html" class="nav-link">Home</a></li><li><a href="../blog.html" class="nav-link">Articles</a></li><li><a href="../categories.html" class="nav-link">Topics</a></li></ul></nav></div></header>
+<section class="page-header" style="padding-top:100px;padding-bottom:2rem;"><div class="container"><div class="article-header"><span class="article-category">Cloud Architecture</span><h1 class="article-header-title">Data Migration Readiness: Questions to Answer Before Moving Records</h1><div class="article-meta-grid"><span>By James Chen</span><span>Published June 18, 2026</span><span>11 min read</span></div></div></div></section>
+<main class="container" style="padding:2rem;"><section class="content-section" style="padding-top:0;"><div class="article-body">
+<p>Data migrations fail when teams treat them as copy jobs. Moving records from one schema, system, or storage model to another is a product and operations problem. Customers care about accuracy, availability, history, permissions, and whether the new system behaves the same where it matters.</p>
+<h2>Define the source of truth</h2>
+<p>Before migration, decide which system wins when records disagree. Old systems often contain duplicates, stale statuses, missing fields, and customer-specific exceptions. If the team does not define rules upfront, the migration script becomes a place where business policy is invented quietly.</p>
+<h2>Measure data shape before writing scripts</h2>
+<p>Profile record counts, null rates, field lengths, enum values, orphan records, and unusual timestamps. Real data is rarely as tidy as the model. Data profiling turns surprises into known cleanup tasks.</p>
+<h2>Plan verification, not just movement</h2>
+<p>A migration is not done when rows land in the new system. It is done when the team can prove key behavior still works. Compare record counts, checksums, customer samples, reports, permissions, and user workflows. Verification should be automated where possible and sampled by humans where meaning matters.</p>
+<h2>Design rollback honestly</h2>
+<p>Some migrations can roll back. Some cannot. Dual writes, read shadows, export backups, and staged cutovers can reduce risk, but only if designed early. If rollback is impossible, the launch plan needs stronger rehearsals and smaller batches.</p>
+<h2>Communicate customer impact</h2>
+<p>If customers may see downtime, delayed reports, changed IDs, or temporary read-only windows, say so clearly. Internal confidence is not a substitute for customer expectations.</p>
+<p>A good data migration plan answers what moves, what changes, what is verified, what can be reversed, and who decides when to pause. The script is only one part of the work.</p>
+</div></section></main><footer class="footer"><div class="footer-container"><p class="footer-copyright">&copy; 2026 Game520 News Hub. All rights reserved.</p></div></footer></body></html>

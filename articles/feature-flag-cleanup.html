@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Feature Flags Need Cleanup Plans, Not Just Launch Plans | Game520 News Hub</title><meta name="description" content="How engineering teams can use feature flags responsibly without creating long-term configuration debt."><meta name="author" content="James Chen"><link rel="stylesheet" href="../css/style.css"></head>
+<body><header class="header" id="header"><div class="nav-container"><a href="../index.html" class="logo"><div class="logo-icon">G</div><span>Game520</span></a><nav><ul class="nav-menu" id="navMenu"><li><a href="../index.html" class="nav-link">Home</a></li><li><a href="../blog.html" class="nav-link">Articles</a></li><li><a href="../categories.html" class="nav-link">Topics</a></li></ul></nav></div></header>
+<section class="page-header" style="padding-top:100px;padding-bottom:2rem;"><div class="container"><div class="article-header"><span class="article-category">Developer Productivity</span><h1 class="article-header-title">Feature Flags Need Cleanup Plans, Not Just Launch Plans</h1><div class="article-meta-grid"><span>By James Chen</span><span>Published June 18, 2026</span><span>9 min read</span></div></div></div></section>
+<main class="container" style="padding:2rem;"><section class="content-section" style="padding-top:0;"><div class="article-body">
+<p>Feature flags are one of the most useful tools in modern delivery. They let teams separate deploy from release, test with small audiences, roll back quickly, and reduce launch drama. They also create a quiet form of debt when nobody removes them.</p>
+<p>A mature flag system needs a cleanup plan as much as a rollout plan. Otherwise the codebase fills with old branches, unclear defaults, stale experiments, and combinations nobody can reason about.</p>
+<h2>Name flags by purpose</h2>
+<p>A release flag, experiment flag, permission flag, and operational kill switch have different lifetimes. Mixing them together creates confusion. The flag name and metadata should say why it exists, who owns it, and when it should be reviewed.</p>
+<h2>Set an expiration date</h2>
+<p>Every temporary flag should have a review date. It does not need to be perfect, but it must exist. If the flag controls a completed rollout, cleanup should be part of the same work, not a someday task.</p>
+<h2>Keep rollback paths simple</h2>
+<p>A flag that controls too many behaviors becomes risky. Small flags are easier to test and remove. If disabling a flag leaves data half-migrated or users in inconsistent states, the team needs a deeper release plan.</p>
+<h2>Test both sides while both sides exist</h2>
+<p>Teams often test the new path and forget the old path. During rollout, both matter. Automated tests should cover the important behavior behind each branch until the old branch is removed.</p>
+<h2>Track flag inventory</h2>
+<p>Once a month, review active flags. Which are permanent controls? Which are experiments? Which are completed releases? Which have no clear owner? The review does not need a committee. It needs accountability.</p>
+<p>Feature flags reduce release risk when they are treated as temporary control points. Without cleanup, they become architecture fog.</p>
+</div></section></main><footer class="footer"><div class="footer-container"><p class="footer-copyright">&copy; 2026 Game520 News Hub. All rights reserved.</p></div></footer></body></html>
